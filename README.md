@@ -31,6 +31,7 @@ Ubuntu 22.04 LTS
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
+
 ## **Step 2 - Install Required Dependencies**
 **Command:**
 ```bash 
@@ -40,6 +41,8 @@ sudo apt install -y \
     gnupg \
     lsb-release
 ```
+![](./images/required_dependencies.png)
+
 ## **Step 3 — Add Docker’s Official GPG Key**
 **Command:**
 ```bash
@@ -48,6 +51,8 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
     sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
+![](./images/docker-gpg_key.png)
+
 ## **Step 4 — Add the Docker APT Repository**
 **Command:**
 ```bash
@@ -58,6 +63,8 @@ echo \
   $(lsb_release -cs) stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
+![](./images/docker_apt_repo.png)
+
 ## **Step 5 — Update Package Lists (After Adding Repo)**
 **Command:**
 ```
@@ -73,6 +80,8 @@ sudo apt install -y \
     docker-buildx-plugin \
     docker-compose-plugin
 ```
+![](./images/install_docker.png)
+
 ## **Step 7 — Verify Docker Installation**
 **Command:**
 ```
@@ -80,11 +89,16 @@ sudo systemctl status docker
 Test Container:
 sudo docker run --rm hello-world
 ```
+![](./images/confirm_docker_install.png)
+
 ## **Step 8 — Create the Docker Group**
 **Command:**
 ```
 sudo groupadd docker
 ```
+![](./images/group_add.png)
+
+**Here you can see me go through the process of confirming if Docker has been added as a group**
 
 ## **Step 9 — Add Your User to the Docker Group**
 **Command:**
@@ -103,6 +117,8 @@ newgrp docker
 ```
 docker run --rm hello-world
 ```
+![](./images/docker_wo_sudo.png)
+
 ---
 
 # 🔐 Docker Security Hardening Steps (Ubuntu)
